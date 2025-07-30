@@ -82,6 +82,7 @@
     "react-loader-spinner": "^6.1.6",
     "react-markdown": "^10.1.0",
     "react-resizable-panels": "^3.0.3",
+    "react-textarea-autosize": "^8.5.9",
     "recharts": "2.15.4",
     "remark-gfm": "^4.0.1",
     "server-only": "^0.0.1",

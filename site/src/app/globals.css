@@ -44,14 +44,14 @@
 }
 
 :root {
-  --radius: 0rem;
+  --radius: 0.8rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.13 0.028 261.692);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.13 0.028 261.692);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.13 0.028 261.692);
-  --primary: oklch(42.4% 0.199 265.638);
+  --primary: oklch(50% 0.134 242.749);
   --primary-foreground: oklch(0.985 0.002 247.839);
   --secondary: oklch(44.8% 0.119 151.328);
   --secondary-foreground: oklch(0.985 0.002 247.839);
@@ -87,7 +87,7 @@
   --popover-foreground: oklch(0.985 0.002 247.839);
   --primary: oklch(0.928 0.006 264.531);
   --primary-foreground: oklch(0.21 0.034 264.665);
-  --secondary: oklch(0.278 0.033 256.848);
+  /* --secondary: oklch(0.278 0.033 256.848); */
   --secondary-foreground: oklch(0.985 0.002 247.839);
   --muted: oklch(0.278 0.033 256.848);
   --muted-foreground: oklch(0.707 0.022 261.325);
@@ -122,15 +122,15 @@
   }
 
   .wrapper {
-    @apply max-w-5xl w-full mx-auto px-4 sm:px-6 lg:px-8;
+    @apply max-w-6xl w-full mx-auto px-4 sm:px-6 lg:px-8;
   }
 
   .h2 {
-    @apply text-4xl md:text-5xl tracking-tight leading-tight font-medium;
+    @apply text-4xl md:text-5xl tracking-tighter font-semibold;
   }
 
   .h3 {
-    @apply text-3xl md:text-4xl tracking-tight leading-tight font-medium;
+    @apply text-3xl tracking-tighter font-medium;
   }
 
   button {
@@ -141,7 +141,7 @@
     mask-image: radial-gradient(
       circle,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0) 100%
+      rgba(0, 0, 0, 0) 80%
     );
     mask-repeat: no-repeat;
     mask-size: cover;
@@ -150,76 +150,14 @@
     -webkit-mask-image: radial-gradient(
       circle,
       rgba(0, 0, 0, 1) 0%,
-      rgba(0, 0, 0, 0) 100%
+      rgba(0, 0, 0, 0) 80%
     );
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: cover;
   }
 }
 
-.tiptap {
-  :first-child {
-    margin-top: 0;
-  }
-
-  /* List styles */
-  /* List styles */
-  ul,
-  ol {
-    padding: 0 1rem;
-    margin: 1.25rem 1rem 1.25rem 0.4rem;
-  }
-
-  ul li {
-    list-style: disc;
-
-    p {
-      margin-top: 0.25em;
-      margin-bottom: 0.25em;
-    }
-  }
-
-  ol li {
-    list-style-type: decimal;
-
-    p {
-      margin-top: 0.25em;
-      margin-bottom: 0.25em;
-    }
-  }
-
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    line-height: 1;
-    margin-top: 2.5rem;
-    text-wrap: pretty;
-  }
-
-  h1,
-  h2 {
-    margin-top: 3.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  h1 {
-    font-size: 1.4rem;
-  }
-
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  h3 {
-    font-size: 1.1rem;
-  }
-
-  h4,
-  h5,
-  h6 {
-    font-size: 1rem;
-  }
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
 }

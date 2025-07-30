@@ -9,7 +9,7 @@ const Heading = ({ label, center }: { label?: string; center?: boolean }) => {
         center && "justify-center items-center"
       )}
     >
-      <Logo />
+      <Logo size="lg" />
       <h2 className="h2">{label}</h2>
     </div>
   );
