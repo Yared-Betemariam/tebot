@@ -27,7 +27,7 @@ export const {
 
         if (!user) return token;
 
-        token.sub = user.id.toString();
+        token.sub = user.id;
         token.email = user.email;
         token.name = user.name;
 

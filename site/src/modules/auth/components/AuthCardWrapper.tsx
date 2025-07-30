@@ -10,6 +10,7 @@ interface CardWrapperProps {
   showSocial?: boolean;
   hideChildren?: boolean;
   center?: boolean;
+  error?: boolean;
 }
 
 const CardWrapper = ({
@@ -18,16 +19,16 @@ const CardWrapper = ({
   center,
   showSocial,
   hideChildren,
+  error,
 }: CardWrapperProps) => {
   return (
-    <div className="flex flex-col relative bg-gradient-to-tr max-w-[528px] gap-4 w-full py-4 px-2">
+    <div className="flex flex-col relative bg-gradient-to-tr max-w-[528px] gap-5 w-full py-4 px-2">
       <CardHeader>
-        <Heading center={center} label={headerLabel} />
+        <Heading error={error} center={center} label={headerLabel} />
       </CardHeader>
       {!hideChildren && (
         <CardContent className="flex-1 mb-4">{children}</CardContent>
       )}
-      <div className="border-b" />
       {showSocial && (
         <CardFooter className="pb-4">
           <Social />

@@ -21,9 +21,9 @@ const Social = () => {
       className="space-x-4 w-full"
     >
       {isPending ? (
-        <Loader2 className="animate-spin" size={18} />
+        <Loader2 className="animate-spin size-5" size={24} />
       ) : (
-        <FcGoogle size={18} />
+        <FcGoogle size={24} className="brightness-200 size-5" />
       )}
       <span>Continue with Google</span>
     </Button>

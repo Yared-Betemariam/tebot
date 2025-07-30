@@ -5,14 +5,14 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { useModalStore } from "@/modules/modals/store";
-import { LogOut } from "lucide-react";
+import { CreditCard, LogOut } from "lucide-react";
 import { signOut } from "next-auth/react";
+import Link from "next/link";
 import { useState } from "react";
-import { IoPerson } from "react-icons/io5";
-import { LuSettings2 } from "react-icons/lu";
+import { LuSettings } from "react-icons/lu";
 import { useUser } from "../hooks";
 
 const UserButton = () => {
@@ -32,8 +32,8 @@ const UserButton = () => {
   if (isLoading) {
     return (
       <div className="p-1">
-        <Avatar className="animate-pulse">
-          <AvatarFallback className="bg-zinc-800/30" />
+        <Avatar className="animate-pulse rounded-md">
+          <AvatarFallback className="bg-zinc-800/30 rounded-md" />
         </Avatar>
       </div>
     );
@@ -43,9 +43,11 @@ const UserButton = () => {
 
   return (
     <DropdownMenu>
-      <DropdownMenuTrigger className="w-fit flex items-center gap-2 p-1 ring-2 ring-transparent hover:ring-zinc-300/25 duration-100 transition-all rounded-full flex-row-reverse">
-        <div className="bg-gradient-to-b from-blue-600 to-primary rounded-full size-8 text-white/40 relative overflow-hidden">
-          <IoPerson className="absolute -bottom-0.5 -left-0 size-7" />
+      <DropdownMenuTrigger className="w-fit flex items-center gap-2 p-1 ring-2 ring-transparent hover:ring-zinc-300/25 duration-100 transition-all rounded-md flex-row-reverse">
+        <div className="bg-gradient-to-b from-blue-600 to-primary rounded-md size-8 text-white/50 relative overflow-hidden grid place-content-center">
+          <span className="capitalize font-medium">
+            {user.name?.at(0) || "U"}
+          </span>
         </div>
         <div className="group-data-[collapsible=icon]:hidden hidden sm:flex flex-col mr-2 items-start -space-y-0.5">
           <span className="whitespace-nowrap font-medium">{user.name}</span>
@@ -56,15 +58,23 @@ const UserButton = () => {
         align="start"
         className="min-w-[14rem] mx-2 px-0 flex flex-col"
       >
-        <DropdownMenuItem
-          onClick={() =>
-            useModalStore.getState().openModal({ open: "settings" })
-          }
-          className="h-10 px-4"
-        >
-          <LuSettings2 className="mr-1 h-4 w-4" />
-          <span>Settings</span>
-        </DropdownMenuItem>
+        <div className="flex flex-col px-4 py-2">
+          <p className="font-medium">{user.name}</p>
+          <span className="text-sm">{user.email}</span>
+        </div>
+        <Link href={"/billing"}>
+          <DropdownMenuItem className="h-10 px-4">
+            <CreditCard className="mr-1 h-4 w-4" />
+            <span>Billing</span>
+          </DropdownMenuItem>
+        </Link>
+        <Link href={"/settings"}>
+          <DropdownMenuItem className="h-10 px-4">
+            <LuSettings className="mr-1 h-4 w-4" />
+            <span>Settings</span>
+          </DropdownMenuItem>
+        </Link>
+        <DropdownMenuSeparator />
 
         <DropdownMenuItem
           disabled={signingOut}

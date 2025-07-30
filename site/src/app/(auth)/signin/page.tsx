@@ -9,15 +9,23 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <CardWrapper headerLabel="Sign in to MetaBook" showSocial>
+    <CardWrapper headerLabel="Signin to Tebot" showSocial>
       <p>
         <span>By signing in you will be agreeing to the </span>
-        <Link target="_blank" href={"#"} className="underline text-blue-950/80">
+        <Link
+          target="_blank"
+          href={"/terms"}
+          className="underline text-blue-950/80"
+        >
           Terms of services
         </Link>{" "}
         <span>and </span>
-        <Link target="_blank" href={"#"} className="underline text-blue-950/80">
-          Privacy policys
+        <Link
+          target="_blank"
+          href={"/privacy-policy"}
+          className="underline text-blue-950/80"
+        >
+          Privacy policy
         </Link>
       </p>
     </CardWrapper>

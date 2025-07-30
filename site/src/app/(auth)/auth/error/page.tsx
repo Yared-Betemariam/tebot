@@ -9,10 +9,10 @@ export const metadata: Metadata = {
 
 const Page = () => {
   return (
-    <CardWrapper headerLabel="Authentication Error">
-      <p className="text-red-600">
-        An error occurred while trying to sign in. Please try again later.
-      </p>
+    <CardWrapper
+      error
+      headerLabel="An error occurred while trying to sign in. Please try again later."
+    >
       <p className="mt-4">
         If the problem persists, please contact support or try signing in with a
         different method.
