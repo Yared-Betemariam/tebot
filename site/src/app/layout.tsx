@@ -1,17 +1,17 @@
 import { TRPCProvider } from "@/trpc/client";
 import type { Metadata } from "next";
 import { SessionProvider } from "next-auth/react";
-import { Open_Sans } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
-const font = Open_Sans({
+const font = Work_Sans({
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | Metabook - AI Trading Journal",
-    default: "Metabook - AI Trading Journal",
+    template: "%s | Tebot",
+    default: "Build Telegram Bots in Minutes - Tebot",
   },
   description:
     "A simple trade journaling application with AI assistance for analysis and statistics.",
